@@ -1,0 +1,28 @@
+<a [routerLink]="['/product', 10]" >Goto Product</a> | 
+<a [routerLink]="['/settings']" >Goto Settings</a>
+
+<!-- 
+<div class="col-sm-4">
+  <h2>User Insert</h2>
+
+  <div *ngIf="error != ''" class="alert alert-danger fade show" role="alert">
+    <strong>Hata!</strong> {{ error }}
+  </div>
+
+  <form [formGroup]="userForm" (ngSubmit)="fncSend()" method="post">
+    <input class="form-control" id="name" formControlName="name"  placeholder="Name" required />
+    <div *ngIf="userForm.controls['name'].invalid" >
+        Lütfen Name Giriniz!
+    </div>
+    <div *ngIf="name?.invalid">
+      Lütfen Name? Giriniz!
+    </div>
+    <input class="form-control" id="email" formControlName="email"  placeholder="E-Mail" required />
+    <div *ngIf="userForm.controls['email'].invalid" >
+      Lütfen E-Mail Giriniz!
+    </div>
+    <input class="btn btn-danger" type="submit" value="Send">
+  </form>
+</div>
+-->
+<router-outlet></router-outlet>
