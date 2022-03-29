@@ -1,0 +1,34 @@
+<div class="col-sm-4">
+    <h2> Product Add </h2>
+    <div class="mb-4">
+        <input [(ngModel)]="title" class="form-control" placeholder="Title" />
+    </div>
+    <div class="mb-4">
+        <input [(ngModel)]="price" class="form-control" placeholder="Price" />
+    </div>
+    <button (click)="fncInsert()" class="btn btn-success">Insert</button>
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let item of products; let i = index;" >
+        <th scope="row"> {{ i+1 }} </th>
+        <td> {{ item['title'] }} </td>
+        <td> {{ item['price'] }} </td>
+        <td>
+            <button (click)="fncDataRemove(i)" class="btn btn-danger btn-sm" >Delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

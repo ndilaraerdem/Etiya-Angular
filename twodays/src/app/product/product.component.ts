@@ -15,6 +15,9 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe( params => {
         const id = params.get('id')
+        if ( id ) {
+          this.getid = id;
+        }
         this.getid = id!
     })
   }
