@@ -6,7 +6,8 @@
     <div class="mb-4">
         <input [(ngModel)]="price" class="form-control" placeholder="Price" />
     </div>
-    <button (click)="fncInsert()" class="btn btn-success">Insert</button>
+    <button *ngIf="index == -1 " (click)="fncInsert()" class="btn btn-success">Insert</button>
+    <button *ngIf="index != -1 " (click)="fncUpdate()" class="btn btn-warning">Update</button>
 </div>
 
 
@@ -16,7 +17,8 @@
         <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">Price</th>
-        <th scope="col">Action</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
       </tr>
     </thead>
     <tbody>
@@ -27,6 +29,9 @@
         <td> {{ item['price'] }} </td>
         <td>
             <button (click)="fncDataRemove(i)" class="btn btn-danger btn-sm" >Delete</button>
+        </td>
+        <td>
+          <button (click)="fncDataUpdate(i)" class="btn btn-warning btn-sm" >Update</button>
         </td>
       </tr>
       

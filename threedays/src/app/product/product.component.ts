@@ -9,7 +9,7 @@ export class ProductComponent implements OnInit {
 
   title = ''
   price = ''
-  products = []
+  products:any[] = []
 
   constructor() { 
       this.fncAllDataLocal()
@@ -53,8 +53,35 @@ export class ProductComponent implements OnInit {
   // data remove
   fncDataRemove( index:number ) {
       // dizi eleman silme
-      this.products.splice(index, 1)
-      localStorage.setItem('products', JSON.stringify(this.products) )
+      const alert = confirm('Silmek istediğinizden emin misiniz?')
+      if ( alert == true ) {
+        this.products.splice(index, 1)
+        localStorage.setItem('products', JSON.stringify(this.products) )
+      }
   }
+
+
+  // data update - select
+  index = -1
+  fncDataUpdate( index:number ) {
+    this.index = index
+    const item = this.products[index]
+    this.title = item['title']
+    this.price = item['price']
+  }
+
+  fncUpdate() {
+    const item = {
+      title: this.title,
+      price: this.price
+    }
+    this.products[this.index] = item
+    localStorage.setItem('products', JSON.stringify(this.products) )
+    this.fncAllDataLocal()
+    this.index = - 1
+    this.title = ''
+    this.price = ''
+  }
+
 
 }
