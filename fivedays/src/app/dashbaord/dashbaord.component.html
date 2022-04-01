@@ -1,1 +1,13 @@
-<p>dashbaord works!</p>
+<app-header></app-header>
+<div class="row">
+    <div *ngFor="let item of products, let i = index" class="card col-sm-4">
+        <img src='{{ item.images![0].normal }}' class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.productName }}</h5>
+            <p class="card-text">{{ item.price }}</p>
+            <a (click)="fncGotoDetail(i)" class="btn btn-primary">Goto Detail</a>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

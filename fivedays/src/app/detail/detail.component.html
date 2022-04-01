@@ -1,0 +1,17 @@
+<app-header></app-header>
+<h1> {{ item.productName }} </h1>
+<p> {{ item.brief }} </p>
+
+<div class="row">
+    <div class="col-sm-4">
+        <img src="{{ item.images![0].normal! }}" class="img-thumbnail">
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h1><span class="badge bg-secondary"> {{ item.price }} </span></h1>
+    </div>
+</div>
+
+<hr/>
+<p [innerHTML]="item.description"></p>
+<app-footer></app-footer>
